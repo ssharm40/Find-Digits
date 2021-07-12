@@ -1,0 +1,23 @@
+def findDigits(n):
+    s=str(n)
+    c=0
+    for i in range(0,len(s),1):
+        if s[i]!='0':
+            if (n%int(s[i]))==0:
+                c=c+1       
+    return c
+    # Write your code here
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input().strip())
+
+    for t_itr in range(t):
+        n = int(input().strip())
+
+        result = findDigits(n)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
